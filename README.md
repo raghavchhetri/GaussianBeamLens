@@ -16,7 +16,7 @@ Exploration of Julia 1.6.1 for simple optical simulations
 
   ### Verdict:
   - The interactive plot generated with GLMakie is nice. However, I've found that it takes a long time not only to initialize GLMakie, but once 
-  it's precompiled, the code itself takes considerable amount of time to run (2 minutes+ on my machine). Even the simple <code>Test_GLMakie_Plots.jl</code> takes several seconds.
+  it's precompiled, the code itself takes a considerable amount of time to run (2 minutes+ on my machine). Even the simple <code>Test_GLMakie_Plots.jl</code> takes several seconds.
   The irony is that this code only needs to run once. So, the benefit of speed for runs 2 and later, which Julia offers, is irrelevent for situations like this.
-  - Hopefully, GLMakie and the visualizatino landscape will improve over time, but at present, I can't see a reason to switch to Julia from MATLAB/Python/Mathematica for these types of tasks.
+  - Hopefully, GLMakie and the visualization landscape will improve over time, but at present, I don't see a reason to switch to Julia from MATLAB/Python/Mathematica for these types of tasks.
   #### rc
