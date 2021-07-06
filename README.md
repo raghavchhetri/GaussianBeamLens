@@ -3,7 +3,7 @@
 ### About:
 Exploration of Julia 1.6.1 for simple optical simulations
 - Using FFTW v1.4.3 and GLMakie v0.4.2
-- Platform: Windows 10 Pro [my machine: D13]
+- Platform: Windows 10 Pro
 
 ### VS Code:
 - Navigate to the <code>"GaussianBeamLens"</code> folder, Right-click > Open with VS Code
@@ -27,3 +27,5 @@ Exploration of Julia 1.6.1 for simple optical simulations
   <code>labelslidergrid!,  0.237762 seconds (448.46 k allocations: 26.290 MiB, 94.47% compilation time)</code></code>\
   - Hopefully, <code>GLMakie</code> and the overall visualization landscape in Julia will improve in the future, thereby making a switch to Julia from MATLAB/Python/Mathematica for these types of tasks more compelling. 
 #### rc
+
+PC: D13
