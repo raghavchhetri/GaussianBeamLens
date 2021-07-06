@@ -6,7 +6,7 @@ Exploration of Julia 1.6.1 for simple optical simulations
 - Platform: Windows 10 Pro [my machine: D13]
 
 ### VS Code:
-- Navigate to the folder to use ("GaussianBeamLens"), Right-click > Open with VS Code
+- Navigate to the <code>"GaussianBeamLens"</code> folder, Right-click > Open with VS Code
 - Start a Julia REPL with <code> ALT + J + O </code> or <code> Option + J + O </code> in Mac
 - Create a Julia environment for the scripts in this folder as follows:\
   Go to the package manager from Julia REPL with <code>]</code>, then \
