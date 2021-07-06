@@ -53,12 +53,12 @@ f_index = Node(3)
 Lensz_index = Node(4)
 
 # Use the values from the Sliders as inputs to get Intensity of the field at every point in x and z
-I = @lift(GaussianBeamLens($x0_index, $w0_index, $f_index, $Lensz_index))
+@time I = @lift(GaussianBeamLens($x0_index, $w0_index, $f_index, $Lensz_index))
 
 # Initialize figure
 fig = Figure(resolution = (2304, 768))
 
-heatmap(fig[1, 1], z, x, I, 
+@time heatmap(fig[1, 1], z, x, I, 
 	colormap = :thermal,
 	axis =(aspect=3,
 		title = "Gaussian Beam: Lens Transmission",
@@ -67,7 +67,7 @@ heatmap(fig[1, 1], z, x, I,
 #Other colormap options: deep
 
 # Define a grid with slider label, value ranges
-lsgrid = labelslidergrid!(
+@time lsgrid = labelslidergrid!(
     fig,
     ["lateral offset", "input beam width", "focal length", "lens z-position"],
     [-240:10:240, 2:1:50, 0:10:2000, 0:10:2000];
