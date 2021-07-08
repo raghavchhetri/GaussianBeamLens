@@ -1,24 +1,24 @@
 using FFTW: ifft, fft, ifftshift, fftshift
 using GLMakie: Node, @lift, labelslidergrid!, set_close_to!, connect!
-using GLMakie: Figure, heatmap, contourf
+using GLMakie: Figure, heatmap #contourf
 
 # Define grid and space
-L = 1                      # wavelength of light 
-n = 1                      # refractive index
-k = 2*pi*n/L               # wave number in material
-Nx = 1024                  # number of x cells
-dx = L/2                   # length of x cells
-Lx = Nx*dx                 # length of grid in x
-dkx = (2*pi)/Lx            # length of kx cell
-Nkx = Nx                   # same number of cells in real and fourier space
+const L = 1                      # wavelength of light 
+const n = 1                      # refractive index
+const k = 2*pi*n/L               # wave number in material
+const Nx = 1024                  # number of x cells
+const dx = L/2                   # length of x cells
+const Lx = Nx*dx                 # length of grid in x
+const dkx = (2*pi)/Lx            # length of kx cell
+const Nkx = Nx                   # same number of cells in real and fourier space
 
-x = dx.*(-(Nx/2):Nx/2-1)
-kx = dkx.*(-(Nkx/2):Nkx/2-1)
-kz = sqrt.(k^2 .- kx.^2)
+const x = dx.*(-(Nx/2):Nx/2-1)
+const kx = dkx.*(-(Nkx/2):Nkx/2-1)
+const kz = sqrt.(k^2 .- kx.^2)
 
-dz = 10                    # steps in z
-zmax = 6000                # end of grid in z
-z = 0:dz:zmax              # z grid
+const dz = 10                    # steps in z
+const zmax = 6000                # end of grid in z
+const z = 0:dz:zmax              # z grid
 
 """
     GaussianBeamLens(x0,w0,f,Lens_z)
@@ -45,6 +45,7 @@ function GaussianBeamLens(x0,w0,f,Lens_z)
     I = abs.(FE).^2                # intensity of the field at every point in x and z
     return I
 end
+precompile(GaussianBeamLens, (Int64, Int64, Int64, Int64))
 
 # Sliders
 x0_index = Node(1)
