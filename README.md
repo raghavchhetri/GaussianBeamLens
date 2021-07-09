@@ -16,6 +16,8 @@ Exploration of Julia 1.6.1 for simple optical simulations
   Note that <code>Manifest.toml</code> and <code>Project.toml</code> are generated in this folder after the above steps
 
 ### Verdict:
+![Gaussian Beam Lens](demo/GaussianBeamLens.gif)
+
   - The interactive plot generated with <code>GLMakie</code> is nice. However, I've found that it takes a long time not only to initialize <code>GLMakie</code>, but once it's precompiled, the code itself takes a considerable amount of time to generate the output (2 minutes+ on my machine). Even the simple <code>Test_GLMakie_Plots.jl</code> took 2+ minutes.\
   <code> GaussianBeamLens + GLMakie heatmap + GLMakie labelslidergrid! </code>\
   <code> 3.239748 seconds (4.75 M allocations: 441.220 MiB, 4.99% gc time, 17.12% compilation time) </code>\
