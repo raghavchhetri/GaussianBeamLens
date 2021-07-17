@@ -29,7 +29,9 @@ Exploration of Julia 1.6.1 for simple optical simulations
   <code> 0.125093 seconds (158.68 k allocations: 11.320 MiB, 26.83% gc time)</code>\
   <code> 0.237762 seconds (448.46 k allocations: 26.290 MiB, 94.47% compilation time)</code></code>\
 
-  - Hopefully, <code>GLMakie</code> and the overall visualization landscape in Julia will improve in the future, thereby making a switch to Julia from MATLAB/Python/Mathematica for these types of tasks more compelling. 
-#### rc
+  - The issue at heart is that Julia doesn't save compiled code, so when a new session is started, everything needs to be compiled again. A workaround is to use [<code>PackageCompiler</code>](https://julialang.github.io/PackageCompiler.jl/dev/) to create a custom Julia sysimage which saves the compiled state, thereby reducing the startup time. However, you'll be missing out on new udpates to the packages, which for active packages, such as <code>GLMakie</code>, happen frequently at the moment. Others have voiced a similar sentiment about this ["time-to-first-plot" issue](https://discourse.julialang.org/t/starting-glmakie-takes-very-long/64106).
 
-PC: D13
+  - Overall, the visualization with <code>GLMakie</code> once you get it is pretty awesome, but the wait time sucks. Hopefully, <code>GLMakie</code>, the visualization landscape, and the startup latency issue in Julia will improve in the future, thereby making a switch to Julia from MATLAB/Python/Mathematica for these types of tasks more compelling.  
+
+
+#### rc
